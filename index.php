@@ -58,25 +58,47 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="page">
     <h1>Danh sách sinh viên</h1>
     <!-- FORM THÊM SINH VIÊN -->
-    <form method="post" class="form-card">
+    <form method="post" class="card add-student-card">
+    <div class="card-header">
         <h3>Thêm sinh viên</h3>
+    </div>
 
-        <div class="form-row">
-            <input type="text" name="student_code" placeholder="Mã sinh viên" required>
-            <input type="text" name="full_name" placeholder="Họ và tên" required>
+    <div class="card-body">
+        <div class="form-group">
+            <label>Mã sinh viên</label>
+            <input type="text" name="student_code" placeholder="VD: SV001" required>
+        </div>
+
+        <div class="form-group">
+            <label>Họ và tên</label>
+            <input type="text" name="full_name" placeholder="Nguyễn Văn A" required>
+        </div>
+
+        <div class="form-group">
+            <label>Ngày sinh</label>
             <input type="date" name="birth_date">
-            <input type="text" name="major" placeholder="Chuyên ngành">
         </div>
 
-        <div style="margin-top:14px">
-            <button type="submit">Thêm sinh viên</button>
+        <div class="form-group">
+            <label>Chuyên ngành</label>
+            <input type="text" name="major" placeholder="Công nghệ thông tin">
         </div>
-    </form>
+    </div>
+
+    <div class="card-footer">
+        <button type="submit">➕ Thêm sinh viên</button>
+    </div>
+</form>
+
     <!-- SEARCH -->
-    <form method="get" class="search-box">
-        <input type="text" name="keyword" placeholder="Tìm theo mã hoặc tên..." value="<?= htmlspecialchars($keyword) ?>">
-        <button type="submit">Tìm</button>
-    </form>
+    <form method="get" class="search-card">
+    <input type="text"
+           name="keyword"
+           placeholder="🔍 Tìm theo mã hoặc tên sinh viên..."
+           value="<?= htmlspecialchars($keyword) ?>">
+    <button type="submit">Tìm kiếm</button>
+</form>
+
 
     <!-- TABLE -->
     <div class="table-wrapper">
