@@ -57,19 +57,21 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="page">
     <h1>Danh sách sinh viên</h1>
-
     <!-- FORM THÊM SINH VIÊN -->
-    <form method="post" class="edit-form">
+    <form method="post" class="form-card">
         <h3>Thêm sinh viên</h3>
 
-        <input type="text" name="student_code" placeholder="Mã sinh viên" required>
-        <input type="text" name="full_name" placeholder="Họ và tên" required>
-        <input type="date" name="birth_date">
-        <input type="text" name="major" placeholder="Chuyên ngành">
+        <div class="form-row">
+            <input type="text" name="student_code" placeholder="Mã sinh viên" required>
+            <input type="text" name="full_name" placeholder="Họ và tên" required>
+            <input type="date" name="birth_date">
+            <input type="text" name="major" placeholder="Chuyên ngành">
+        </div>
 
-        <button type="submit">Thêm sinh viên</button>
+        <div style="margin-top:14px">
+            <button type="submit">Thêm sinh viên</button>
+        </div>
     </form>
-
     <!-- SEARCH -->
     <form method="get" class="search-box">
         <input type="text" name="keyword" placeholder="Tìm theo mã hoặc tên..." value="<?= htmlspecialchars($keyword) ?>">
