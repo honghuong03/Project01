@@ -2,7 +2,9 @@
 require_once "config.php";
 
 $sql = "SELECT * FROM students";
-$result = mysqli_query($conn, $sql);
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +28,14 @@ $result = mysqli_query($conn, $sql);
         </tr>
     </thead>
     <tbody>
-        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+        <?php foreach ($data as $row): ?>
         <tr>
             <td><?= $row['student_code']; ?></td>
             <td><?= $row['full_name']; ?></td>
             <td><?= $row['birth_date']; ?></td>
             <td><?= $row['major']; ?></td>
         </tr>
-        <?php endwhile; ?>
+        <?php endforeach; ?>
     </tbody>
 </table>
 
