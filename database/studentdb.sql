@@ -1,5 +1,3 @@
-CREATE DATABASE studentdb CHARACTER SET utf8mb4;
-USE studentdb;
 
 CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
