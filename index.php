@@ -58,39 +58,62 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1>Danh sách sinh viên</h1>
         <!-- FORM THÊM SINH VIÊN -->
         <form method="post" class="card add-student-card">
-        <div class="card-header">
-            <h3>Thêm sinh viên</h3>
+    <div class="card-header">
+        <h3>Thêm sinh viên</h3>
+    </div>
+
+    <div class="card-body">
+        <div class="form-group">
+            <label>Mã sinh viên</label>
+            <input type="text"
+                   name="student_code"
+                   class="form-input"
+                   placeholder="VD: SV001"
+                   required>
         </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label>Mã sinh viên</label>
-                <input type="text" name="student_code" placeholder="VD: SV001" required>
-            </div>
-            <div class="form-group">
-                <label>Họ và tên</label>
-                <input type="text" name="full_name" placeholder="Nguyễn Văn A" required>
-            </div>
-            <div class="form-group">
-                <label>Ngày sinh</label>
-                <input type="date" name="birth_date">
-            </div>
-            <div class="form-group">
-                <label>Chuyên ngành</label>
-                <input type="text" name="major" placeholder="Công nghệ thông tin">
-            </div>
+
+        <div class="form-group">
+            <label>Họ và tên</label>
+            <input type="text"
+                   name="full_name"
+                   class="form-input"
+                   placeholder="Nguyễn Văn A"
+                   required>
         </div>
-        <div class="card-footer">
-            <button type="submit">Thêm sinh viên</button>
+
+        <div class="form-group">
+            <label>Ngày sinh</label>
+            <input type="date"
+                   name="birth_date"
+                   class="form-input">
         </div>
-    </form>
-        <!-- SEARCH -->
-        <form method="get" class="search-card">
-        <input type="text"
-            name="keyword"
-            placeholder="Tìm theo mã hoặc tên sinh viên..."
-            value="<?= htmlspecialchars($keyword) ?>">
-        <button type="submit">Tìm kiếm</button>
-    </form>
+
+        <div class="form-group">
+            <label>Chuyên ngành</label>
+            <input type="text"
+                   name="major"
+                   class="form-input"
+                   placeholder="Công nghệ thông tin">
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">
+            Thêm sinh viên
+        </button>
+    </div>
+</form>
+<form method="get" class="search-card">
+    <input type="text"
+           name="keyword"
+           class="form-input search-input"
+           placeholder="Tìm theo mã hoặc tên sinh viên..."
+           value="<?= htmlspecialchars($keyword) ?>">
+
+    <button type="submit" class="btn btn-success">
+        Tìm kiếm
+    </button>
+</form>
         <!-- TABLE -->
         <div class="table-wrapper">
             <table>
