@@ -16,28 +16,32 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 
-<h1>Danh sách sinh viên</h1>
+<div class="page">
+    <h1>📘 Danh sách sinh viên</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Mã SV</th>
-            <th>Họ tên</th>
-            <th>Ngày sinh</th>
-            <th>Chuyên ngành</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($data as $row): ?>
-        <tr>
-            <td><?= $row['student_code']; ?></td>
-            <td><?= $row['full_name']; ?></td>
-            <td><?= $row['birth_date']; ?></td>
-            <td><?= $row['major']; ?></td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã SV</th>
+                    <th>Họ tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Chuyên ngành</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($data as $row): ?>
+                <tr>
+                    <td><?= $row['student_code']; ?></td>
+                    <td><?= $row['full_name']; ?></td>
+                    <td><?= $row['birth_date']; ?></td>
+                    <td><?= $row['major']; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 </body>
 </html>
