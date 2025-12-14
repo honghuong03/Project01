@@ -54,9 +54,11 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
+    <link rel="stylesheet" href="./CSS/style.css">
     <div class="page">
         <h1>Danh sách sinh viên</h1>
         <!-- FORM THÊM SINH VIÊN -->
+         <link rel="stylesheet" href="./CSS/style.css">
         <form method="post" class="card add-student-card">
     <div class="card-header">
         <h3>Thêm sinh viên</h3>
@@ -103,6 +105,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </button>
     </div>
 </form>
+<link rel="stylesheet" href="./CSS/style.css">
 <form method="get" class="search-card">
     <input type="text"
            name="keyword"
