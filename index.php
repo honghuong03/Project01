@@ -54,6 +54,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
+    <h1><u>Dương Thị Hồng Huong - Cuối kỳ</u></h1>
     <link rel="stylesheet" href="./CSS/style.css">
     <div class="page">
         <h1>Danh sách sinh viên</h1>
